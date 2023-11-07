@@ -27,16 +27,16 @@ export const drawRect = (
       const text = classes[i];
       console.log("text::", text);
       const name = labelMap[text]["name"];
-      if (text === 3) {
-        setTriggerApiCall(true);
-      } else {
+      // if (text === 3) {
+      //   setTriggerApiCall(true);
+      // } else {
         setInputText((prevState) => {
           const intArr = prevState || [];
           intArr.push(name);
           const uniqArr = intArr.filter((o, i) => intArr[i - 1] !== o);
           return console.log({ uniqArr }) || uniqArr;
         });
-      }
+      // }
       // console.log("name::", name);
       const color = labelMap[text]["color"];
 

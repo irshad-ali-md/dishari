@@ -156,7 +156,7 @@ export default function Home() {
     //  Loop and detect hands
     setInterval(() => {
       detect(net);
-    }, 1000);
+    }, 24);
   };
 
   const detect = async (net) => {
