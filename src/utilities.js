@@ -2,9 +2,9 @@
 const labelMap = {
   1: { name: "Explain", color: "red" },
   2: { name: "Thank You", color: "yellow" },
-  3: { name: "I Love You", color: "lime" },
-  4: { name: "Operating Systems", color: "blue" },
-  5: { name: "Different", color: "purple" },
+  3: { name: "Different", color: "lime" },
+  4: { name: "Systems", color: "blue" },
+  5: { name: "Operating", color: "purple" },
 };
 
 // Define a drawing function
