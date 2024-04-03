@@ -374,7 +374,7 @@ export default function Home() {
                 <canvas ref={canvasRef} className="signlang_canvas" />
               </div>
 
-              <div className="signlang_data-container p-3">
+              <div className="signlang_data-container px-3">
                 <Title level={3}>Instructions:</Title>
                 <Text>1. Press and hold Spacebar Key to start detection</Text>
                 <Text>
@@ -426,15 +426,17 @@ export default function Home() {
               </div>
 
               <div
-                className="mt-10 px-4 overscroll-y-auto overflow-auto text-center"
+                className="mt-10 px-4 overscroll-y-auto overflow-auto"
                 style={{ height: "80vh" }}
               >
                 {showGuide ? (
-                  <Image
-                    src="/images/sign_guide.jpg"
-                    preview={false}
-                    width="90%"
-                  />
+                  <div className="w-100 text-center">
+                    <Image
+                      src="/images/sign_guide.jpg"
+                      preview={false}
+                      width="80%"
+                    />
+                  </div>
                 ) : (
                   <>
                     {!messages.length ? (
