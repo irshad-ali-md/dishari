@@ -376,15 +376,15 @@ export default function Home() {
 
               <div className="signlang_data-container px-3">
                 <Title level={3}>Instructions:</Title>
-                <Text>1. Press and hold Spacebar Key to start detection</Text>
+                <Text>1. Press and hold the Spacebar Key to start the detection</Text>
                 <Text>
-                  2. Deceide your hand gesture based on the guide provided
+                  2. Decide your hand gesture based on the guide provided
                 </Text>
                 <Text>
                   3. Release the Spacebar key to capture the hand gesture
                 </Text>
                 <Text>
-                  4. Hit send button to get results for youe desired keyword search
+                  4. Hit the send button to get results for your desired keyword search
                 </Text>
 
                 <Title level={4} className="text-center">
