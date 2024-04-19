@@ -342,8 +342,8 @@ export default function Home() {
         setInputText((prevState) => {
           const intArr = [...(prevState || [])];
           intArr.push(prevGestureOutput);
-          const uniqArr = intArr.filter((o, i) => intArr[i - 1] !== o);
-          return uniqArr;
+          // const uniqArr = intArr.filter((o, i) => intArr[i - 1] !== o);
+          return intArr;
         });
 
         return "";
