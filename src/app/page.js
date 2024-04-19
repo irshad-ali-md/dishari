@@ -210,7 +210,7 @@ export default function Home() {
   const handleChatGenerate = async () => {
     setLoading(true);
 
-    let input = (inputText || []).join(" ");
+    let input = (inputText || []).join("");
 
     const myMessage = {
       text: input,
