@@ -1,36 +1,37 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Dishari: Gesture-Based Application for ASL Recognition
 
-## Getting Started
+Dishari is an innovative web application that leverages MediaPipe's Gesture Recognizer to capture and interpret hand gestures in real-time. This project is designed to recognize American Sign Language (ASL) gestures, providing an accessible interface that translates these gestures into actionable commands or search queries. The application is built using Next.js for both the front-end and API functionalities, offering a seamless and responsive user experience.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Real-Time Gesture Recognition:** Utilizes MediaPipe's Gesture Recognizer for detecting and interpreting hand gestures with high accuracy.
+- **ASL Support:** The model is trained on the American Sign Language (ASL) Alphabet Dataset from Kaggle, ensuring accurate recognition of ASL gestures.
+- **Generative AI-Powered Search:** Integrates OpenAI's GPT models to generate search results based on recognized gestures, enhancing user interaction.
+- **User-Friendly Interface:** Built with Next.js, providing a fast, responsive, and intuitive user interface.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Prerequisites
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Before running the project locally, ensure you have the following installed on your machine:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- [Node.js](https://nodejs.org/) (version 14 or higher)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+- [Git](https://git-scm.com/)
 
-## Learn More
+## Installation
 
-To learn more about Next.js, take a look at the following resources:
+Follow the steps below to clone and run the project locally:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Clone the repository:**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+   ```bash
+   git clone https://github.com/irshad-ali-md/dishari.git
+   ```
+2. **Run the development server:**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
 
-## Deploy on Vercel
+   Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
