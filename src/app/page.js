@@ -191,7 +191,8 @@ export default function Home() {
       const recognizer = await GestureRecognizer.createFromOptions(vision, {
         baseOptions: {
           modelAssetPath:
-            "https://cloud-object-storage-cos-standard-0pw.s3.us-east.cloud-object-storage.appdomain.cloud/asl_dataset2.task",
+            // "https://cloud-object-storage-cos-standard-0pw.s3.us-east.cloud-object-storage.appdomain.cloud/asl_dataset2.task",
+            "https://dishari.s3.us-south.cloud-object-storage.appdomain.cloud/gesture_recognizer.task",
         },
         numHands: 2,
         runningMode: runningMode,
@@ -432,7 +433,7 @@ export default function Home() {
                 {showGuide ? (
                   <div className="w-100 text-center">
                     <Image
-                      src="/images/sign_guide.jpg"
+                      src="/images/sign_guide_v2.jpeg"
                       preview={false}
                       width="80%"
                     />
