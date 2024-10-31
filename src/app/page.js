@@ -65,7 +65,14 @@ const ChatMessage = ({ text, from }) => {
   );
 };
 
-const ChatInput = ({ value, setValue, onSend, loading, inputText, setShowGuide }) => {
+const ChatInput = ({
+  value,
+  setValue,
+  onSend,
+  loading,
+  inputText,
+  setShowGuide,
+}) => {
   const sendInput = () => {
     onSend();
     setValue([]);
@@ -161,6 +168,16 @@ export default function Home() {
   const [detectKey, setDetectKey] = useState("");
   const [showGuide, setShowGuide] = useState(true);
 
+  const interpretGesture = (label) => {
+    if (label === "space") {
+      return " ";
+    } else if (label === "del") {
+      return "[DELETE]";
+    } else {
+      return label;
+    }
+  };
+
   useEffect(() => {
     document.addEventListener("keydown", detectKeyDown);
     document.addEventListener("keyup", detectKeyUp);
@@ -191,8 +208,7 @@ export default function Home() {
       const recognizer = await GestureRecognizer.createFromOptions(vision, {
         baseOptions: {
           modelAssetPath:
-            // "https://cloud-object-storage-cos-standard-0pw.s3.us-east.cloud-object-storage.appdomain.cloud/asl_dataset2.task",
-            "https://dishari.s3.us-south.cloud-object-storage.appdomain.cloud/gesture_recognizer.task",
+            "https://indiadrishti.s3.us-south.cloud-object-storage.appdomain.cloud/gesture_recognizer%20(1).task",
         },
         numHands: 2,
         runningMode: runningMode,
@@ -340,11 +356,18 @@ export default function Home() {
         canvasRef.current.height
       );
       setGestureOutput((prevGestureOutput) => {
+        const interpretedGesture = interpretGesture(prevGestureOutput);
+
         setInputText((prevState) => {
-          const intArr = [...(prevState || [])];
-          intArr.push(prevGestureOutput);
-          // const uniqArr = intArr.filter((o, i) => intArr[i - 1] !== o);
-          return intArr;
+          const newText = [...(prevState || [])];
+
+          if (interpretedGesture === "[DELETE]") {
+            newText.pop();
+          } else {
+            newText.push(interpretedGesture);
+          }
+
+          return newText;
         });
 
         return "";
@@ -377,7 +400,9 @@ export default function Home() {
 
               <div className="signlang_data-container px-3">
                 <Title level={3}>Instructions:</Title>
-                <Text>1. Press and hold the Spacebar Key to start the detection</Text>
+                <Text>
+                  1. Press and hold the Spacebar Key to start the detection
+                </Text>
                 <Text>
                   2. Decide your hand gesture based on the guide provided
                 </Text>
@@ -385,7 +410,8 @@ export default function Home() {
                   3. Release the Spacebar key to capture the hand gesture
                 </Text>
                 <Text>
-                  4. Hit the send button to get results for your desired keyword search
+                  4. Hit the send button to get results for your desired keyword
+                  search
                 </Text>
 
                 <Title level={4} className="text-center">
@@ -433,7 +459,7 @@ export default function Home() {
                 {showGuide ? (
                   <div className="w-100 text-center">
                     <Image
-                      src="/images/sign_guide_v2.jpeg"
+                      src="/images/sign_guide.png"
                       preview={false}
                       width="80%"
                     />
